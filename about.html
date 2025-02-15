@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Root_Stealer</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="DALL·E 2025-02-14 17.00.36 - A dark-themed logo featuring a hacker wearing a black hoodie sitting in front of a laptop. The hacker's face is obscured by the hood, and the focus is.webp" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -56,10 +56,21 @@
         }
         .content h1 {
             font-size: 2.5em;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
         }
         .content p {
             font-size: 1.2em;
             line-height: 1.5;
+        }
+        .typing-cursor::after {
+            content: '|';
+            display: inline-block;
+            animation: blink 0.7s infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
         }
     </style>
 </head>
@@ -70,14 +81,15 @@
             <a href="index.html">Home</a>
             <a href="#writeups.html">Writeups</a>
             <a href="#portfolio.html">Portfolio</a>
-            <a href="about.html">About</a>
+            <a href="contact.html">Contact Us</a>
         </div>
     </nav>
     
     <div class="content">
-        <h1>About Root_Stealer</h1>
+        <h1 id="typing-title" class="typing-cursor"></h1>
         <p>
-            Welcome to Root_Stealer’s cyber domain! I am a cybersecurity enthusiast, hacker, and tech explorer.
+            Welcome to Root_Stealer’s cyber domain!.Formally My name is Shobhit Tomar I am currently a student 
+            in which have cybersecurity enthusiast, ethical hacker, and tech explorer.
             Passionate about penetration testing, ethical hacking, and all things cyber. I love to document
             my journey through writeups, projects, and security research.
         </p>
@@ -87,5 +99,24 @@
             and innovative cybersecurity projects.
         </p>
     </div>
+    
+    <script>
+        const titleText = "About Root_Stealer";
+        let titleIndex = 0;
+        let typingTitle = document.getElementById("typing-title");
+        
+        function typeTitle() {
+            if (titleIndex < titleText.length) {
+                typingTitle.textContent = titleText.substring(0, titleIndex + 1);
+                titleIndex++;
+                setTimeout(typeTitle, 150);
+            } else {
+                titleIndex = 0;
+                setTimeout(typeTitle, 2000);
+            }
+        }
+        
+        window.onload = typeTitle;
+    </script>
 </body>
 </html>
