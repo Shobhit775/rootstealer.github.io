@@ -24,7 +24,7 @@
         
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" onclick="reloadHome(event)">Home</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#blogs">Blogs & Findings</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -67,7 +67,6 @@
                     <a href="blog2.html">Read More</a>
                 </div>
                 
-                <!-- Subdirectory 3: Blog Post #3 -->
                 <div class="blog-post">
                     <h3>How to Protect Your Digital Identity</h3>
                     <p>Tips and techniques to keep your personal information secure online.</p>
@@ -85,5 +84,11 @@
     <footer>
         <p>&copy; 2025 Root_Stealer. All rights reserved.</p>
     </footer>
+    <script>
+        function reloadHome(event) {
+            event.preventDefault();
+            window.location.href = "index.html";
+            window.location.reload(true);
+    }</script>
 </body>
 </html>
