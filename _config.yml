@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-theme:"jekyll-theme-hacker"
 Gem::Specification.new do |s|
   s.name          = "jekyll-theme-hacker"
   s.version       = "0.2.0"
