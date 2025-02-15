@@ -13,21 +13,13 @@
             color: #0f0;
             background: black;
             text-align: center;
-        }
-        .background-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://source.unsplash.com/random/1600x900/?hacker,code') no-repeat center center/cover;
-            opacity: 0.2;
-            z-index: -1;
+            overflow: hidden;
         }
         .navbar, .footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: rgba(0, 255, 0, 0.2);
             padding: 15px 20px;
             position: fixed;
             width: 100%;
@@ -35,7 +27,6 @@
         }
         .navbar {
             top: 0;
-            background: rgba(0, 255, 0, 0.2);
         }
         .footer {
             bottom: 0;
@@ -43,8 +34,8 @@
             text-align: center;
             padding: 10px 0;
             background: black;
+            font-size: 0.8em;
             border-top: 2px solid #0f0;
-            font-size: 0.9em;
         }
         .menu, .footer div {
             display: flex;
@@ -52,9 +43,8 @@
         .navbar a, .footer a {
             color: #0f0;
             text-decoration: none;
-            padding: 5px 15px;
+            padding: 5px 10px;
             transition: background 0.3s;
-            font-size: 0.9em;
         }
         .navbar a:hover, .footer a:hover {
             background: #0f0;
@@ -66,27 +56,25 @@
             margin: auto;
         }
         .content h1 {
-            font-size: 2.5em;
+            font-size: 1.5em;
             white-space: nowrap;
             overflow: hidden;
             display: inline-block;
+            border-right: 2px solid #0f0;
         }
         .content p {
             font-size: 1.2em;
             line-height: 1.5;
         }
-        .typing-cursor::after {
-            content: '|';
-            display: inline-block;
-            animation: blink 0.7s infinite;
+        @keyframes blink-caret {
+            50% { border-color: transparent; }
         }
-        @keyframes blink {
-            50% { opacity: 0; }
+        .content h1 {
+            animation: blink-caret 0.7s step-end infinite;
         }
     </style>
 </head>
 <body>
-    <div class="background-animation"></div>
     <nav class="navbar">
         <div class="menu">
             <a href="index.html">Home</a>
@@ -97,7 +85,7 @@
     </nav>
     
     <div class="content">
-        <h1 id="typing-title" class="typing-cursor"></h1>
+        <h1 id="typing-title"></h1>
         <p>
             Welcome to Root_Stealer’s cyber domain! Formally, my name is Shobhit Tomar. I am currently a student 
             and a cybersecurity enthusiast, ethical hacker, and tech explorer.
@@ -118,7 +106,6 @@
             <a href="https://discord.com/channels/473760315293696010/477042310467813376" target="_blank">Discord</a>
         </div>
     </footer>
-    
     <script>
         const titleText = "About Root_Stealer";
         let titleIndex = 0;
@@ -130,8 +117,11 @@
                 titleIndex++;
                 setTimeout(typeTitle, 150);
             } else {
-                titleIndex = 0;
-                setTimeout(typeTitle, 2000);
+                setTimeout(() => {
+                    titleIndex = 0;
+                    typingTitle.textContent = "";
+                    typeTitle();
+                }, 2000);
             }
         }
         
