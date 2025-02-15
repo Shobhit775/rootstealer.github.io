@@ -3,92 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Root_Stealer</title>
-    
-    <!-- Favicon for the website tab -->
-    <link rel="icon" href="DALL%C2%B7E%202025-02-14%2017.00.36%20-%20A%20dark-themed%20logo%20featuring%20a%20hacker%20wearing%20a%20black%20hoodie%20sitting%20in%20front%20of%20a%20laptop.%20The%20hacker's%20face%20is%20obscured%20by%20the%20hood,%20and%20the%20focus%20is.webp" type="image/webp">
-    
+    <title>Root_Stealer - Home</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
-
-    <!-- Font Awesome CDN for search icon (if you're using it) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', monospace;
+            color: #0f0;
+            background: black;
+            text-align: center;
+            overflow: hidden;
+        }
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://source.unsplash.com/random/1600x900/?hacker,code') no-repeat center center/cover;
+            opacity: 0.2;
+            z-index: -1;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+        }
+        .navbar .menu {
+            display: flex;
+        }
+        .navbar a {
+            color: #0f0;
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: background 0.3s;
+        }
+        .navbar a:hover {
+            background: #0f0;
+            color: black;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 1.5em;
+            background: none;
+            border: none;
+            color: #0f0;
+            cursor: pointer;
+        }
+        @media screen and (max-width: 768px) {
+            .navbar .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.9);
+            }
+            .navbar .menu a {
+                text-align: center;
+                padding: 15px;
+                display: block;
+            }
+            .menu-toggle {
+                display: block;
+            }
+        }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+            margin-top: 50px;
+        }
+        .glitch {
+            font-size: 2.5em;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            animation: glitch 1s infinite linear alternate;
+        }
+        @keyframes glitch {
+            0% { text-shadow: -2px 0 red, 2px 0 cyan; }
+            100% { text-shadow: 2px 0 red, -2px 0 cyan; }
+        }
+        .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .hero img {
+            width: 150px;
+            height: auto;
+            border-radius: 50%;
+            margin-top: 20px;
+        }
+        .typing-effect {
+            font-size: 1.5em;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid #0f0;
+            width: 0;
+            animation: typing 4s steps(40, end) forwards, blink-caret .75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #0f0; }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <!-- Hacker logo image on the left side -->
-            <img src="DALL%C2%B7E%202025-02-14%2017.00.36%20-%20A%20dark-themed%20logo%20featuring%20a%20hacker%20wearing%20a%20black%20hoodie%20sitting%20in%20front%20of%20a%20laptop.%20The%20hacker's%20face%20is%20obscured%20by%20the%20hood,%20and%20the%20focus%20is.webp" alt="Hacker Logo" class="logo-img">
-            <h1 id="logo-text">Root_Stealer</h1>
+    <div class="background-animation"></div>
+    <nav class="navbar">
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="writeups.html">Writeups</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html">Contact Us</a>
         </div>
-        
-        <nav>
-            <ul>
-                <li><a href="index.html" onclick="reloadHome(event)">Home</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#blogs">Blogs & Findings</a></li>
-                <li><a href="#projects">Projects</a></li>
-            </ul>
-        </nav>
+    </nav>
+    
+    <header class="hero">
+        <h1 class="glitch">Welcome to world's of Root_Stealer</h1>
+        <p class="subtitle typing-effect" id="typing-text"></p>
+        <img src="hackers-115562867057i5aqfkhh9.png" alt="Hacker Animation" class="hero-jpg">
+
     </header>
     
-    <div class="container">
-        <aside class="sidebar">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#blogs">Blogs & Findings</a></li>
-                <li><a href="#projects">Projects</a></li>
-            </ul>
-        </aside>
-        
-        <main class="content">
-            <section id="portfolio" class="portfolio-section">
-                <h2>Portfolio</h2>
-                <p>Showcasing my skills and experience.</p>
-            </section>
-            
-            <!-- Blogs & Findings Section -->
-            <section id="blogs">
-                <h2>Blogs & Findings</h2>
-                <p>Sharing my research and thoughts.</p>
-                
-                <!-- Subdirectory 1: Blog Post #1 -->
-                <div class="blog-post">
-                    <h3>Understanding Cybersecurity Trends in 2025</h3>
-                    <p>Exploring the latest trends and challenges in the cybersecurity landscape.</p>
-                    <a href="blog1.html">Read More</a>
-                </div>
-                
-                <!-- Subdirectory 2: Blog Post #2 -->
-                <div class="blog-post">
-                    <h3>Top Tools for Ethical Hacking</h3>
-                    <p>A review of the most effective tools used by ethical hackers in their work.</p>
-                    <a href="blog2.html">Read More</a>
-                </div>
-                
-                <div class="blog-post">
-                    <h3>How to Protect Your Digital Identity</h3>
-                    <p>Tips and techniques to keep your personal information secure online.</p>
-                    <a href="blog3.html">Read More</a>
-                </div>
-            </section>
-            
-            <section id="projects">
-                <h2>Projects</h2>
-                <p>Displaying my work and contributions.</p>
-            </section>
-        </main>
-    </div>
-    
-    <footer>
-        <p>&copy; 2025 Root_Stealer. All rights reserved.</p>
-    </footer>
     <script>
-        function reloadHome(event) {
-            event.preventDefault();
-            window.location.href = "/index.html";
-            window.location.reload(true);
-    }</script>
+         function toggleMenu() {
+            const menu = document.querySelector(".menu");
+            menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+        }
+        
+        const text = "Exploring Cybersecurity, Hacking, and Tech...";
+        let index = 0;
+        function typeEffect() {
+            if (index < text.length) {
+                document.getElementById("typing-text").textContent += text.charAt(index);
+                index++;
+                setTimeout(typeEffect, 100);
+            } else {
+                setTimeout(() => {
+                    document.getElementById("typing-text").textContent = "";
+                    index = 0;
+                    typeEffect();
+                }, 2000);
+            }
+        }
+        window.onload = typeEffect;
+    </script>
 </body>
 </html>
