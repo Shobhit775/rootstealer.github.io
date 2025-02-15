@@ -56,11 +56,12 @@
             margin: auto;
         }
         .content h1 {
-            font-size: 1.5em;
+            font-size: 3em;  /* Increased font size */
             white-space: nowrap;
             overflow: hidden;
             display: inline-block;
             border-right: 2px solid #0f0;
+            animation: blink-caret 0.7s step-end infinite;
         }
         .content p {
             font-size: 1.2em;
@@ -68,9 +69,6 @@
         }
         @keyframes blink-caret {
             50% { border-color: transparent; }
-        }
-        .content h1 {
-            animation: blink-caret 0.7s step-end infinite;
         }
     </style>
 </head>
