@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Root_Stealer</title>
-    <link rel="icon" href="DALL·E 2025-02-14 17.00.36 - A dark-themed logo featuring a hacker wearing a black hoodie sitting in front of a laptop. The hacker's face is obscured by the hood, and the focus is.webp" type="image/x-icon">
+    <link rel="DALL·E 2025-02-14 17.00.36 - A dark-themed logo featuring a hacker wearing a black hoodie sitting in front of a laptop. The hacker's face is obscured by the hood, and the focus is.webp" href="" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -25,32 +25,42 @@
             opacity: 0.2;
             z-index: -1;
         }
-        .navbar {
+        .navbar, .footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(0, 0, 0, 0.8);
             padding: 15px 20px;
             position: fixed;
-            top: 0;
             width: 100%;
             z-index: 10;
         }
-        .navbar .menu {
+        .navbar {
+            top: 0;
+            background: rgba(0, 255, 0, 0.2);
+        }
+        .footer {
+            bottom: 0;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px 0;
+            background: black;
+            border-top: 2px solid #0f0;
+        }
+        .menu, .footer div {
             display: flex;
         }
-        .navbar a {
+        .navbar a, .footer a {
             color: #0f0;
             text-decoration: none;
             padding: 10px 20px;
             transition: background 0.3s;
         }
-        .navbar a:hover {
+        .navbar a:hover, .footer a:hover {
             background: #0f0;
             color: black;
         }
         .content {
-            padding: 100px 20px;
+            padding: 100px 20px 60px;
             max-width: 800px;
             margin: auto;
         }
@@ -88,8 +98,8 @@
     <div class="content">
         <h1 id="typing-title" class="typing-cursor"></h1>
         <p>
-            Welcome to Root_Stealer’s cyber domain!.Formally My name is Shobhit Tomar I am currently a student 
-            in which have cybersecurity enthusiast, ethical hacker, and tech explorer.
+            Welcome to Root_Stealer’s cyber domain! Formally, my name is Shobhit Tomar. I am currently a student 
+            and a cybersecurity enthusiast, ethical hacker, and tech explorer.
             Passionate about penetration testing, ethical hacking, and all things cyber. I love to document
             my journey through writeups, projects, and security research.
         </p>
@@ -103,7 +113,7 @@
         <span>&copy; 2025 Root_Stealer. All Rights Reserved.</span>
         <div>
             <a href="https://github.com/Ste4ler" target="_blank">GitHub</a>
-            <a href="https://www.linkedin.com/in/shobhit-tomar-04a50b2a0" target="_blank">Linkedin</a>
+            <a href="https://www.linkedin.com/in/shobhit-tomar-04a50b2a0" target="_blank">LinkedIn</a>
             <a href="https://discord.com/channels/473760315293696010/477042310467813376" target="_blank">Discord</a>
         </div>
     </footer>
