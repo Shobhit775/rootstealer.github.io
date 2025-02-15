@@ -60,7 +60,10 @@
             color: black;
         }
         .hero {
-            margin-top: 80px;
+            margin-top: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .typing-effect {
             font-size: 1.5em;
@@ -69,6 +72,7 @@
             border-right: 2px solid #0f0;
             width: 0;
             animation: typing 4s steps(40, end) forwards, blink-caret .75s step-end infinite;
+            text-align: center;
         }
         @keyframes typing {
             from { width: 0; }
@@ -100,7 +104,7 @@
     </nav>
     
     <header class="hero">
-        <h1 class="glitch">Welcome to world's of Root_Stealer</h1>
+        <h1 class="glitch">Welcome to the world of Root_Stealer</h1>
         <p class="subtitle typing-effect" id="typing-text"></p>
         <img src="hackers-115562867057i5aqfkhh9.png" alt="Hacker Animation" class="hero-jpg">
     </header>
