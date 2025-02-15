@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Root_Stealer - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', monospace;
+            color: #0f0;
+            background: black;
+            text-align: center;
+            overflow: hidden;
+        }
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://source.unsplash.com/random/1600x900/?hacker,code') no-repeat center center/cover;
+            opacity: 0.2;
+            z-index: -1;
+        }
+        .navbar, .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 255, 0, 0.2);
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            z-index: 10;
+        }
+        .navbar {
+            top: 0;
+        }
+        .footer {
+            bottom: 0;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px 0;
+            background: black;
+            border-top: 2px solid #0f0;
+        }
+        .menu, .footer div {
+            display: flex;
+        }
+        .navbar a, .footer a {
+            color: #0f0;
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: background 0.3s;
+        }
+        .navbar a:hover, .footer a:hover {
+            background: #0f0;
+            color: black;
+        }
+        .typing-effect {
+            font-size: 1.5em;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid #0f0;
+            width: 0;
+            animation: typing 4s steps(40, end) forwards, blink-caret .75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #0f0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animation"></div>
+    <nav class="navbar">
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="#writeups.html">Writeups</a>
+            <a href="#portfolio.html">Portfolio</a>
+            <a href="about.html">About</a>
+        </div>
+    </nav>
+    
+    <header class="hero">
+        <h1 class="glitch">Welcome to world's of Root_Stealer</h1>
+        <p class="subtitle typing-effect" id="typing-text"></p>
+        <img src="/home/cyberhack/Downloads/hackers-115562867057i5aqfkhh9.png" alt="Hacker Animation" class="hero-jpg">
+    </header>
+    
+    <footer class="footer">
+        <span>&copy; 2025 Root_Stealer. All Rights Reserved.</span>
+        <div>
+            <a href="https://github.com/Ste4ler" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/shobhit-tomar-04a50b2a0" target="_blank">LinkedIn</a>
+            <a href="https://discord.com/channels/473760315293696010/477042310467813376" target="_blank">Discord</a>
+        </div>
+    </footer>
+    
+    <script>
+        const text = "Exploring Cybersecurity, Hacking, and Tech...";
+        let index = 0;
+        function typeEffect() {
+            if (index < text.length) {
+                document.getElementById("typing-text").textContent += text.charAt(index);
+                index++;
+                setTimeout(typeEffect, 100);
+            } else {
+                setTimeout(() => {
+                    document.getElementById("typing-text").textContent = "";
+                    index = 0;
+                    typeEffect();
+                }, 2000);
+            }
+        }
+        window.onload = typeEffect;
+    </script>
+</body>
+</html>
